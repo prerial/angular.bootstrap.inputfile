@@ -1,57 +1,47 @@
-<div layout="column" ng-cloak class="md-inline-form">
-
-    <md-content layout-padding ng-show="currentStep === 1">
-        <div>
+    <div class="column" ng-show="currentStep === 1">
             <form name="userForm">
-                <h3>Select Source</h3>
-                <div layout-gt-sm="row">
-                    <md-input-container class="md-block" flex-gt-sm>
+                <div class="row col-md-12">
+                    <h3>Select Source</h3>
+                    <div class="form-group col-md-4">
                         <label>Input Source</label>
-                        <select placeholder="Choose file type" md-on-open="aaaa()" ng-required="true" ng-model="inputType">
+                        <select class="form-control" placeholder="Choose file type" ng-required="true" ng-model="inputType">
                             <option ng-repeat="type in sourceTypes" value="{{type}}">
                                 {{type}}
                             </option>
                         </select>
-                    </md-input-container>
+                    </div>
 
-                    <md-input-container class="md-block" flex-gt-sm>
+                    <div class="form-group col-md-4">
                         <label>Target Source</label>
-                        <select placeholder="Choose file type" md-on-open="aaaa()" ng-required="true" ng-model="targetType">
+                        <select class="form-control" placeholder="Choose file type" ng-required="true" ng-model="targetType">
                             <option ng-repeat="type in sourceTypes" value="{{type}}">
                                 {{type}}
                             </option>
                         </select>
-                    </md-input-container>
+                    </div>
 
                 </div>
 
-                <div layout-gt-xs="row">
-                    <md-input-container class="md-block" flex-gt-xs>
-                        <input id="file1" type="file" nv-file-select="" uploader="uploader">
-                    </md-input-container>
+                <div class="row col-md-12">
+                    <div class="form-group col-md-4">
+                        <input class="form-control" id="file1" type="file" nv-file-select="" uploader="uploader">
+                    </div>
 
-                    <md-input-container class="md-block" flex-gt-xs>
-                        <input id="file2" type="file" nv-file-select="" uploader="uploader">
-                    </md-input-container>
+                    <div class="form-group col-md-4">
+                        <input class="form-control" id="file2" type="file" nv-file-select="" uploader="uploader">
+                    </div>
                 </div>
 
-                <div layout-gt-xs="row">
-                    <button id="btn-step-1" ng-click="showSelectionPage()" ng-disabled="checkLoadedFiles()" class="md-primary md-raised md-hue-1">Next</button>
+                <div class="row col-md-12">
+                    <div class="form-group col-md-4">
+                        <button id="btn-step-1" ng-click="showSelectionPage()" ng-disabled="checkLoadedFiles()" class="btn btn-primary">Next</button>
+                    </div>
                 </div>
 
             </form>
         </div>
-    </md-content>
 
-</div>
 
-<style>
-    .capitalize{
-        font-size:20px;
-color:red;
-    }
-
-</style>
 <div id="page-wrapper">
     <md-content layout-padding ng-show="currentStep === 2">
         <h3>Select Fields</h3>
