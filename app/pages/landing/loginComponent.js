@@ -12,6 +12,8 @@
     angular.module('app.uds').controller('LoginController', ['$scope', '$location', 'Alerts', 'LoginService',
 
           function($scope, $location, alerts, loginService) {
+              $scope.dynamicTooltip = 'Hello, World!';
+              $scope.dynamicTooltipText = 'dynamic';
 
               $scope.formSubmit = function() {
                   if(loginService.login($scope.username, $scope.password)) {
