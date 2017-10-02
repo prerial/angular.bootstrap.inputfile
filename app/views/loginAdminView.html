@@ -1,29 +1,17 @@
-
-<div layout="column" ng-cloak style="border:2px solid #ddd">
-
-    <md-content layout-padding>
-           <div layout="row" layout-xs="column" layout-sm="column" layout-align="space-between center">
-                <div flex-gt-sm="50">
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-md-12">
 
 
-            <form ng-submit="formSubmit()" class="form">
+        <form ng-submit="formSubmit()" class="form">
 
-               <div class="col-md-4">
+               <div class="form-group">
                    <h3>Please Login</h3>
-                   <md-input-container class="md-icon-float md-block">
-                       <!-- Use floating label instead of placeholder -->
-                       <md-icon md-svg-src="img/icons/ic_person_24px.svg" class=""></md-icon>
                        <input ng-model="username" type="text" placeholder="Username (required)" ng-required="true">
-                   </md-input-container>
-
-                   <md-input-container class="md-block">
-                       <!-- Use floating placeholder instead of label -->
-                       <md-icon md-svg-src="img/icons/ic_https_black_24px.svg" class="email"></md-icon>
                        <input ng-model="password" type="password" placeholder="Password (required)" ng-required="true">
-                   </md-input-container>
 
                     <div class="form-group">
-                        <button class="md-primary md-raised md-hue-5" type="submit">Login</button>
+                        <button class="btn btn-success" type="submit">Login</button>
                         <span class="text-danger">{{ error }}</span>
                    </div>
 
@@ -33,7 +21,6 @@
 
         </div>
     </div>
-    </md-content>
 </div>
 
 
