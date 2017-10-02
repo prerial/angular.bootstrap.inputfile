@@ -13,7 +13,7 @@ angular.module('app.uds', ['ui.bootstrap', 'ngSanitize', 'commonDirectives',
     'app.core', 'validation', 'ui.select', 'ngMessages'
 ])
 */
-angular.module('app.uds', ['ngRoute', 'angularFileUpload', 'commonDirectives'])
+angular.module('app.uds', ['ngRoute', 'ui.bootstrap', 'angularFileUpload', 'commonDirectives'])
     .constant('Urls', {
         'saveEncryption':'/data/saveEncryptionPolicy.json',
         'getAllEncryptions':'/data/getAllEncryptionPolicy.json'
@@ -73,33 +73,8 @@ angular.module('app.uds', ['ngRoute', 'angularFileUpload', 'commonDirectives'])
 ;angular.module('commonDirectives').run(['$templateCache', function($templateCache) {
   'use strict';
 
-  $templateCache.put('app/views/asyncFunctionsView.html',
-    "<h1>Async Functions View</h1>"
-  );
-
-
-  $templateCache.put('app/views/dropdownEditor.html',
-    "<div>{{gender}}<select><option>AAAA</option><option>BBBB</option></select></div>"
-  );
-
-
   $templateCache.put('app/views/loginAdminView.html',
     "<div id=\"page-wrapper\"><div class=\"row\"><div class=\"col-md-12\"><form ng-submit=\"formSubmit()\" class=\"form\"><div class=\"col-md-4\"><h3>Please Login</h3><div class=\"form-group\"><label for=\"userid\">User ID</label><input id=\"userid\" ng-model=\"username\" type=\"text\" class=\"form-control\" placeholder=\"Username (required)\" ng-required=\"true\"></div><div class=\"form-group\"><label for=\"inputPassword\">Password</label><input id=\"inputPassword\" ng-model=\"password\" type=\"password\" class=\"form-control\" placeholder=\"Password (required)\" ng-required=\"true\"></div><div class=\"form-group\"><button class=\"btn btn-primary\" type=\"submit\">Login</button> <span class=\"text-danger\">{{ error }}</span></div></div></form></div></div></div>"
-  );
-
-
-  $templateCache.put('app/views/objectDescriptorsView.html',
-    "<h3>Object.getOwnPropertyDescriptors() (2017)</h3>"
-  );
-
-
-  $templateCache.put('app/views/objectEntriesView.html',
-    "<h3>Object.entries() and Object.values() (2017)</h3>"
-  );
-
-
-  $templateCache.put('app/views/sharedMemoryView.html',
-    "<h3>Shared memory and atomics (2017)</h3>"
   );
 
 
@@ -113,71 +88,8 @@ angular.module('app.uds', ['ngRoute', 'angularFileUpload', 'commonDirectives'])
     "    }</style><div id=\"page-wrapper\"><md-content layout-padding ng-show=\"currentStep === 2\"><h3>Select Fields</h3><div class=\"row\"><div layout-gt-sm=\"row\"><md-input-container class=\"md-block\" flex-gt-sm><label>Select Source Key</label><select placeholder=\"Choose file key\" md-on-open=\"bbbb()\" ng-required=\"true\" ng-model=\"inputKey\"><option ng-repeat=\"opt in sourceArray\" value=\"{{opt}}\">{{opt}}</option></select></md-input-container><md-input-container class=\"md-block\" flex-gt-sm><label>Select Target Key</label><select placeholder=\"Choose file key\" md-on-open=\"bbbb()\" ng-required=\"true\" ng-model=\"targetKey\"><option ng-repeat=\"opt in targetArray\" value=\"{{opt}}\">{{opt}}</option></select></md-input-container></div><div layout-gt-xs=\"row\"><button ng-click=\"addKeys()\" ng-disabled=\"checkLoadedKeys()\" class=\"md-primary md-raised md-hue-1\">Add Fields</button></div></div><h3>Map Result</h3><div id=\"result\" class=\"normal\">{{map}}</div><div layout-gt-xs=\"row\"><button ng-click=\"reconcile()\" ng-disabled=\"checkReconcile()\" class=\"md-primary md-raised md-hue-1\">Reconcile</button> <button ng-click=\"reset()\" class=\"md-primary md-raised md-hue-1\">Back</button></div></md-content></div>"
   );
 
-
-  $templateCache.put('app/views/stringMethodsView.html',
-    "<h1>String Methods View</h1>"
-  );
-
-
-  $templateCache.put('app/views/trailingCommasView.html',
-    "<h3>Trailing commas (2017)</h3>"
-  );
-
 }]);
-;/**
- * Created by U160964 on 5/16/2017.
- */
-(function() {
-    "use strict";
-
-    angular.module('app.uds').component('asyncFunctions', {
-        templateUrl: 'app/views/asyncFunctionsView.html',
-        controller: 'AsyncFunctionsController'
-
-    });
-    angular.module('app.uds').controller('AsyncFunctionsController', ['$scope', '$location', 'Alerts', 'CommonHttpRequestService', 'ModalService',
-
-          function($scope, $location, alerts, loginService, requestService) {
-
-              function fetchJson(url) {
-                  return fetch(url)
-                        .then(request => request.text())
-                        .then(text => {
-                              return JSON.parse(text);
-                        }).catch(error => {
-                              console.log(`ERROR: ${error.stack}`);
-                        })
-              }
-//authentications
-//http://example.com/some_file.json
-              async function fetchJson(url) {
-                  try {
-                      let request = await fetch(url);
-                      return await request.json();
-
-//                      let text = await request.text();
-//                      return JSON.parse(text);
-                  }
-                  catch (error) {
-                      console.log(`ERROR: ${error.stack}`);
-                  }
-              }
-              fetchJson('data/authentications.json')
-                  .then(obj => console.log(obj));
-
-              debugger;
-
-        }]);
-
-})();
-;angular.module('app.uds').controller('ButtonsCtrl', function($scope) {
-    $scope.title1 = 'Button';
-    $scope.title4 = 'Warn';
-    $scope.isDisabled = true;
-
-    $scope.googleUrl = 'http://google.com';
-
-});;(function(){
+;(function(){
     "use strict";
 
     angular.module('app.uds').factory('LoginService', function() {
@@ -259,48 +171,6 @@ angular.module('app.uds', ['ngRoute', 'angularFileUpload', 'commonDirectives'])
                       $scope.error = "Incorrect username/password !";
                   }
               };
-        }]);
-
-})();
-;/**
- * Created by U160964 on 5/16/2017.
- */
-(function() {
-    "use strict";
-
-    angular.module('app.uds').component('objectDescriptors', {
-        templateUrl: 'app/views/objectDescriptorsView.html',
-        controller: 'ObjectDescriptorsController'
-
-    });
-    angular.module('app.uds').controller('ObjectDescriptorsController', ['$scope', '$location', 'Alerts', 'CommonHttpRequestService', 'ModalService',
-
-          function($scope, $location, alerts, loginService, requestService) {
-
-
-              debugger;
-
-        }]);
-
-})();
-;/**
- * Created by U160964 on 5/16/2017.
- */
-(function() {
-    "use strict";
-
-    angular.module('app.uds').component('sharedMemory', {
-        templateUrl: 'app/views/sharedMemoryView.html',
-        controller: 'SharedMemoryController'
-
-    });
-    angular.module('app.uds').controller('SharedMemoryController', ['$scope', '$location', 'Alerts', 'CommonHttpRequestService', 'ModalService',
-
-          function($scope, $location, alerts, loginService, requestService) {
-
-
-              debugger;
-
         }]);
 
 })();
@@ -525,48 +395,6 @@ angular.module('app.uds', ['ngRoute', 'angularFileUpload', 'commonDirectives'])
                   }
               };
 */
-        }]);
-
-})();
-;/**
- * Created by U160964 on 5/16/2017.
- */
-(function() {
-    "use strict";
-
-    angular.module('app.uds').component('stringMethods', {
-        templateUrl: 'app/views/stringMethodsView.html',
-        controller: 'StringMethodsController'
-
-    });
-    angular.module('app.uds').controller('StringMethodsController', ['$scope', '$location', 'Alerts', 'CommonHttpRequestService', 'ModalService',
-
-          function($scope, $location, alerts, loginService, requestService) {
-
-
-              debugger;
-
-        }]);
-
-})();
-;/**
- * Created by U160964 on 5/16/2017.
- */
-(function() {
-    "use strict";
-
-    angular.module('app.uds').component('trailingCommas', {
-        templateUrl: 'app/views/trailingCommasView.html',
-        controller: 'TrailingCommasController'
-
-    });
-    angular.module('app.uds').controller('TrailingCommasController', ['$scope', '$location', 'Alerts', 'CommonHttpRequestService', 'ModalService',
-
-          function($scope, $location, alerts, loginService, requestService) {
-
-
-              debugger;
-
         }]);
 
 })();

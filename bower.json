@@ -1,8 +1,8 @@
 {
-  "name": "angular-ui-material",
+  "name": "angular-ui-bootstrap",
   "description": "A starter project for AngularJS",
   "version": "0.0.0",
-  "homepage": "https://github.com/prerial/angular.ui.material.git",
+  "homepage": "https://github.com/prerial/angular.ui.bootstrap.git",
   "license": "MIT",
   "private": true,
   "directory":"app/",
