@@ -2,7 +2,7 @@
   "name": "angular-ui-bootstrap",
   "description": "A starter project for AngularJS",
   "version": "0.0.0",
-  "homepage": "https://github.com/prerial/angular.ui.bootstrap.git",
+  "homepage": "https://github.com/prerial/angular.bootstrap.inputfile.git",
   "license": "MIT",
   "private": true,
   "directory":"app/",
