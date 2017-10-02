@@ -84,7 +84,7 @@ angular.module('app.uds', ['ngRoute', 'angularFileUpload', 'commonDirectives'])
 
 
   $templateCache.put('app/views/loginAdminView.html',
-    "<div id=\"page-wrapper\"><div class=\"row\"><div class=\"col-md-12\"><form ng-submit=\"formSubmit()\" class=\"form\"><div class=\"form-group\"><h3>Please Login</h3><input ng-model=\"username\" type=\"text\" placeholder=\"Username (required)\" ng-required=\"true\"> <input ng-model=\"password\" type=\"password\" placeholder=\"Password (required)\" ng-required=\"true\"><div class=\"form-group\"><button class=\"btn btn-success\" type=\"submit\">Login</button> <span class=\"text-danger\">{{ error }}</span></div></div></form></div></div></div>"
+    "<div id=\"page-wrapper\"><div class=\"row\"><div class=\"col-md-12\"><form ng-submit=\"formSubmit()\" class=\"form\"><div class=\"col-md-4\"><h3>Please Login</h3><div class=\"form-group\"><label for=\"userid\">User ID</label><input id=\"userid\" ng-model=\"username\" type=\"text\" class=\"form-control\" placeholder=\"Username (required)\" ng-required=\"true\"></div><div class=\"form-group\"><label for=\"inputPassword\">Password</label><input id=\"inputPassword\" ng-model=\"password\" type=\"password\" class=\"form-control\" placeholder=\"Password (required)\" ng-required=\"true\"></div><div class=\"form-group\"><button class=\"btn btn-primary\" type=\"submit\">Login</button> <span class=\"text-danger\">{{ error }}</span></div></div></form></div></div></div>"
   );
 
 
