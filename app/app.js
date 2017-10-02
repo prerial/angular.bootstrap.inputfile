@@ -13,7 +13,7 @@ angular.module('app.uds', ['ui.bootstrap', 'ngSanitize', 'commonDirectives',
     'app.core', 'validation', 'ui.select', 'ngMessages'
 ])
 */
-angular.module('app.uds', ['ngRoute', 'angularFileUpload', 'commonDirectives'])
+angular.module('app.uds', ['ngRoute', 'ui.bootstrap', 'angularFileUpload', 'commonDirectives'])
     .constant('Urls', {
         'saveEncryption':'/data/saveEncryptionPolicy.json',
         'getAllEncryptions':'/data/getAllEncryptionPolicy.json'

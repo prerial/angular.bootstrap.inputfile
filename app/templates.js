@@ -1,33 +1,8 @@
 angular.module('commonDirectives').run(['$templateCache', function($templateCache) {
   'use strict';
 
-  $templateCache.put('app/views/asyncFunctionsView.html',
-    "<h1>Async Functions View</h1>"
-  );
-
-
-  $templateCache.put('app/views/dropdownEditor.html',
-    "<div>{{gender}}<select><option>AAAA</option><option>BBBB</option></select></div>"
-  );
-
-
   $templateCache.put('app/views/loginAdminView.html',
     "<div id=\"page-wrapper\"><div class=\"row\"><div class=\"col-md-12\"><form ng-submit=\"formSubmit()\" class=\"form\"><div class=\"col-md-4\"><h3>Please Login</h3><div class=\"form-group\"><label for=\"userid\">User ID</label><input id=\"userid\" ng-model=\"username\" type=\"text\" class=\"form-control\" placeholder=\"Username (required)\" ng-required=\"true\"></div><div class=\"form-group\"><label for=\"inputPassword\">Password</label><input id=\"inputPassword\" ng-model=\"password\" type=\"password\" class=\"form-control\" placeholder=\"Password (required)\" ng-required=\"true\"></div><div class=\"form-group\"><button class=\"btn btn-primary\" type=\"submit\">Login</button> <span class=\"text-danger\">{{ error }}</span></div></div></form></div></div></div>"
-  );
-
-
-  $templateCache.put('app/views/objectDescriptorsView.html',
-    "<h3>Object.getOwnPropertyDescriptors() (2017)</h3>"
-  );
-
-
-  $templateCache.put('app/views/objectEntriesView.html',
-    "<h3>Object.entries() and Object.values() (2017)</h3>"
-  );
-
-
-  $templateCache.put('app/views/sharedMemoryView.html',
-    "<h3>Shared memory and atomics (2017)</h3>"
   );
 
 
@@ -39,16 +14,6 @@ angular.module('commonDirectives').run(['$templateCache', function($templateCach
     "color:red;\r" +
     "\n" +
     "    }</style><div id=\"page-wrapper\"><md-content layout-padding ng-show=\"currentStep === 2\"><h3>Select Fields</h3><div class=\"row\"><div layout-gt-sm=\"row\"><md-input-container class=\"md-block\" flex-gt-sm><label>Select Source Key</label><select placeholder=\"Choose file key\" md-on-open=\"bbbb()\" ng-required=\"true\" ng-model=\"inputKey\"><option ng-repeat=\"opt in sourceArray\" value=\"{{opt}}\">{{opt}}</option></select></md-input-container><md-input-container class=\"md-block\" flex-gt-sm><label>Select Target Key</label><select placeholder=\"Choose file key\" md-on-open=\"bbbb()\" ng-required=\"true\" ng-model=\"targetKey\"><option ng-repeat=\"opt in targetArray\" value=\"{{opt}}\">{{opt}}</option></select></md-input-container></div><div layout-gt-xs=\"row\"><button ng-click=\"addKeys()\" ng-disabled=\"checkLoadedKeys()\" class=\"md-primary md-raised md-hue-1\">Add Fields</button></div></div><h3>Map Result</h3><div id=\"result\" class=\"normal\">{{map}}</div><div layout-gt-xs=\"row\"><button ng-click=\"reconcile()\" ng-disabled=\"checkReconcile()\" class=\"md-primary md-raised md-hue-1\">Reconcile</button> <button ng-click=\"reset()\" class=\"md-primary md-raised md-hue-1\">Back</button></div></md-content></div>"
-  );
-
-
-  $templateCache.put('app/views/stringMethodsView.html',
-    "<h1>String Methods View</h1>"
-  );
-
-
-  $templateCache.put('app/views/trailingCommasView.html',
-    "<h3>Trailing commas (2017)</h3>"
   );
 
 }]);
