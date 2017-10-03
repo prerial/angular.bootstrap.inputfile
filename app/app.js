@@ -1,19 +1,9 @@
 /**
  * Declare (set), configure and bootstrap all modules in this file
  */
-angular.module('commonDirectives', []);
-
-/*
-
-angular.module('app.core', ['ngRoute', 'httpInterceptor']);
-
-angular.module('validation', ['ngMessages']);
-
-angular.module('app.uds', ['ui.bootstrap', 'ngSanitize', 'commonDirectives',
-    'app.core', 'validation', 'ui.select', 'ngMessages'
-])
-*/
-angular.module('app.uds', ['ngRoute', 'ui.bootstrap', 'angularFileUpload', 'commonDirectives'])
+angular.module('udsviews', []);
+angular.module('uds.directives', []);
+angular.module('app.uds', ['ngRoute', 'ngMessages', 'ui.bootstrap', 'angularFileUpload', 'udsviews', 'uds.directives'])
     .constant('Urls', {
         'saveEncryption':'/data/saveEncryptionPolicy.json',
         'getAllEncryptions':'/data/getAllEncryptionPolicy.json'
