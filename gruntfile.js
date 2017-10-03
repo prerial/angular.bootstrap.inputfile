@@ -13,9 +13,10 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         ngtemplates:    {
-            commonDirectives:          {
+            udsviews:          {
                 src:        [
-                    'app/views/*.html'
+                    'app/views/*.html',
+                    'app/pages/common/*.html'
                 ],
                 dest:       'app/templates.js',
                 options:    {
@@ -56,7 +57,7 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             dist: {
-                src: [modules, '<%= ngtemplates.commonDirectives.dest %>', app_files/*, controllers*/ ],
+                src: [modules, '<%= ngtemplates.udsviews.dest %>', app_files/*, controllers*/ ],
                 dest: output
             },
             test: {
