@@ -3,7 +3,7 @@
  */
 angular.module('udsviews', []);
 angular.module('uds.directives', []);
-angular.module('app.uds', ['ngRoute', 'ngMessages', 'ui.bootstrap', 'angularFileUpload', 'udsviews', 'uds.directives'])
+angular.module('app.uds', ['ngRoute', 'ngMessages', 'ngAnimate', 'ui.bootstrap', 'angularFileUpload', 'udsviews', 'uds.directives'])
     .constant('Urls', {
         'saveEncryption':'/data/saveEncryptionPolicy.json',
         'getAllEncryptions':'/data/getAllEncryptionPolicy.json'
@@ -22,6 +22,9 @@ angular.module('app.uds', ['ngRoute', 'ngMessages', 'ui.bootstrap', 'angularFile
         $routeProvider
             .when('/login', {
                 template: '<login-splash></login-splash>'
+            })
+            .when('/animations', {
+                template: '<animations></animations>'
             })
             .when('/sourceTypes', {
                 template: '<source-types></source-types>'

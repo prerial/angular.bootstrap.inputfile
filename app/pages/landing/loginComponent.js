@@ -10,7 +10,6 @@
 
     });
     angular.module('app.uds').controller('LoginController', ['$scope', '$location', '$timeout', 'Alerts', 'LoginService',
-
           function($scope, $location, $timeout, alerts, loginService) {
 
               $scope.formSubmit = function() {

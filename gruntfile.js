@@ -2,7 +2,8 @@ module.exports = function(grunt) {
     var app_files = [
             'app/pages/common/*.js',
             'app/pages/common/*/*.js',
-            'app/pages/landing/*.js',
+            'app/pages/animations/*.js',
+            'app/pages/landing/*.js'
         ],
         modules = 'app/app.js',
 //		controllers  = 'target/js/controllers/*/*.js',
