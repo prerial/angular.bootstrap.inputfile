@@ -12,6 +12,7 @@
     angular.module('app.uds').controller('AnimationsController', ['$scope', '$location', '$timeout', 'Alerts', 'LoginService',
           function($scope, $location, $timeout, alerts, loginService) {
               $scope.fadeAnimation = false;
+              $scope.bool = false;
          }]);
 
 })();
