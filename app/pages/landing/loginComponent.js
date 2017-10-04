@@ -9,8 +9,8 @@
         controller: 'LoginController'
 
     });
-    angular.module('app.uds').controller('LoginController', ['$scope', '$location', '$timeout', 'Alerts', 'LoginService',
-          function($scope, $location, $timeout, alerts, loginService) {
+    angular.module('app.uds').controller('LoginController', ['$scope', '$location', '$timeout', 'Alerts', 'notificationService', 'LoginService',
+          function($scope, $location, $timeout, alerts, notificationService, loginService) {
 
               $scope.formSubmit = function() {
                   $scope.expired = false;
@@ -21,8 +21,7 @@
                       $location.url('/sourceTypes');
                   } else {
                       $timeout(function() { $scope.expired = true; }, 5000);
-                      $scope.alerts.push({type: 'danger',msg: 'Incorrect username/password!'});
-
+                      notificationService.error('Incorrect username/password!');
                   }
               };
 
