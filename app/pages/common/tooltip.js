@@ -11,7 +11,6 @@
             },
             require: '^form',
             link: function (scope, elem, attrs, formCtrl) {
-
                 var template, inputName, title, top, left;
                 elem.on("focus", function(e) {
                     e.preventDefault();
@@ -24,32 +23,28 @@
                     template.css('display', 'none');
                     inputName = elem.attr('id');
                     scope.$watch(function() {
-                        return formCtrl[inputName].$error
-                    }, function(invalid) {
-                        if (invalid) {
-                            title = $('#' + elem.attr('id') + '-error').find('span').html();
-                            if(title){
-                                template.addClass("pre-tooltip tooltip top").show().find('.tooltip-inner').html(title);
-                                top = elem.offset().top - ($('.tooltip-container').height());
-                                left = (elem.offset().left + elem.width()) / 2;
-                                template.css('left', left).css('top', top).css('opacity', 1).css('display', 'block').stop(true,true);
-                                elem.addClass('error');
-                            }else{
-                                template.css('opacity', 0);
-                                elem.removeClass('error');
-                            }
-                        }else{
+                        if(formCtrl[inputName].$valid){
+                            console.log('a');
                             template.css('opacity', 0);
                             elem.removeClass('error');
                         }
-                    }, function() {}
-                    );
+                        return formCtrl[inputName].$error
+                    },function(errarr){
+                        var str = '[ng-message=\"'+ Object.keys(errarr)[0] +'\"]';
+                        title = $('#' + elem.attr('id') + '-error').find('span'+str).html();
+                        template.addClass("pre-tooltip tooltip top").show().find('.tooltip-inner').html(title);
+                        top = elem.offset().top - ($('.tooltip-container').height());
+                        left = (elem.offset().left + elem.width()) / 2;
+                        template.css('left', left).css('top', top).css('opacity', 1).css('display', 'block').stop(true,true);
+                        elem.addClass('error');
+                    }, function(){
+                    });
                 });
             }
         }
     }
 
-    TooltipDirective.$inject = ['$compile', '$templateCache'];
+    TooltipDirective.$inject = ['$compile', '$templateCache', '$timeout'];
 
     angular.module('uds.directives').directive("preTooltip", TooltipDirective);
 
