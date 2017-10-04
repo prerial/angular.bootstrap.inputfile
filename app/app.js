@@ -3,7 +3,7 @@
  */
 angular.module('udsviews', []);
 angular.module('uds.directives', []);
-angular.module('app.uds', ['ngRoute', 'ngMessages', 'ngAnimate', 'ui.bootstrap', 'angularFileUpload', 'udsviews', 'uds.directives'])
+angular.module('app.uds', ['ngRoute', 'ngMessages', 'ngAnimate', 'jlareau.pnotify', 'ui.bootstrap', 'angularFileUpload', 'udsviews', 'uds.directives'])
     .constant('Urls', {
         'saveEncryption':'/data/saveEncryptionPolicy.json',
         'getAllEncryptions':'/data/getAllEncryptionPolicy.json'
