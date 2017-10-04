@@ -1,19 +1,33 @@
 /* there is no need to define anything inside of the destination
 CSS class since the keyframe will take charge of the animation */
+.fade {
+    opacity:1;
+}
 .fade.ng-leave {
     animation: my_fade_animation 0.5s linear;
     -webkit-animation: my_fade_animation 0.5s linear;
 }
 
 @keyframes my_fade_animation {
-    from { opacity:0; }
-    to { opacity:1; }
+    from { opacity:1; }
+    to { opacity:0; }
 }
 
 @-webkit-keyframes my_fade_animation {
     from { opacity:1; }
     to { opacity:0; }
 }
+
+.firstSampleAnimation.ng-hide-add,
+.firstSampleAnimation.ng-hide-remove {
+    -webkit-transition: 1s ease-in-out opacity;
+    transition: 1s ease-in-out opacity;
+    opacity: 1;
+}
+.firstSampleAnimation.ng-hide {
+    opacity: 0;
+}
+
     /* ngIf animation */
 .animationIf.ng-enter,
 .animationIf.ng-leave {
