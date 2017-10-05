@@ -26,6 +26,12 @@ angular.module('app.uds', ['ngRoute', 'ngMessages', 'ngAnimate', 'jlareau.pnotif
             .when('/animations', {
                 template: '<animations></animations>'
             })
+            .when('/ngshowanim', {
+                template: '<ngshowanim></ngshowanim>'
+            })
+            .when('/ngifanim', {
+                template: '<ngifanim></ngifanim>'
+            })
             .when('/firstanim', {
                 template: '<animations></animations>'
             })
