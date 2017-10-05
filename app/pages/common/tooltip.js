@@ -12,6 +12,9 @@
             require: '^form',
             link: function (scope, elem, attrs, formCtrl) {
                 var template, inputName, title, top, left;
+                scope.$on("clearPopups", function() {
+                    template.remove();
+                });
                 elem.on("focus", function(e) {
                     e.preventDefault();
                     template = $compile($templateCache.get('app/pages/common/tooltip.html'))(scope);
