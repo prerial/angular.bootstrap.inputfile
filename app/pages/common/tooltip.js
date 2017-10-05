@@ -14,10 +14,6 @@
                 var template, inputName, title, top, left;
                 elem.on("focus", function(e) {
                     e.preventDefault();
-                    var container = $('.tooltip-container');
-                    if(container.length > 0){
-                        container.remove();
-                    }
                     template = $compile($templateCache.get('app/pages/common/tooltip.html'))(scope);
                     $('body').append(template);
                     template.css('display', 'none');
@@ -38,6 +34,9 @@
                         elem.addClass('error');
                     }, function(){
                     });
+                });
+                elem.on("blur", function() {
+                    template.remove();
                 });
             }
         }
