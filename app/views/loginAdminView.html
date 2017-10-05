@@ -29,15 +29,7 @@
 
             </div>
         </form>
-            <div class="col-md-6 show-grid">
-                <script type="text/ng-template" id="alert.html">
-                    <div class="col-md-12" ng-transclude></div>
-                </script>
-
-                <div dismiss-on-timeout="10000" class="col-md-12 alert-danger" style="white-space:nowrap;position:absolute;z-index:100000;" uib-alert ng-repeat="alert in alerts" ng-class="{'fade-out': expired}" close="closeAlert($index)">{{alert.msg}}</div>
-
-            </div>
-         </div>
+        </div>
     </div>
 </div>
 

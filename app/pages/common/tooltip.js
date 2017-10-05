@@ -24,13 +24,12 @@
                     inputName = elem.attr('id');
                     scope.$watch(function() {
                         if(formCtrl[inputName].$valid){
-                            console.log('a');
                             template.css('opacity', 0);
                             elem.removeClass('error');
                         }
                         return formCtrl[inputName].$error
                     },function(errarr){
-                        var str = '[ng-message=\"'+ Object.keys(errarr)[0] +'\"]';
+                        var str = '[ng-message="'+ Object.keys(errarr)[0] +'"]';
                         title = $('#' + elem.attr('id') + '-error').find('span'+str).html();
                         template.addClass("pre-tooltip tooltip top").show().find('.tooltip-inner').html(title);
                         top = elem.offset().top - ($('.tooltip-container').height());
