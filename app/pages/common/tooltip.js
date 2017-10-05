@@ -13,7 +13,9 @@
             link: function (scope, elem, attrs, formCtrl) {
                 var template, inputName, title, top, left;
                 scope.$on("clearPopups", function() {
-                    template.remove();
+                    if(template){
+                        template.remove();
+                    }
                 });
                 elem.on("focus", function(e) {
                     e.preventDefault();
