@@ -66,6 +66,8 @@ angular.module('app.uds', ['ngRoute', 'ngMessages', 'ngAnimate', 'jlareau.pnotif
         $scope.navigation = $scope.animations;
         $scope.users = [];
         $scope.$on('$routeChangeStart', function(event, next, current) {
+            $scope.$broadcast("clearPopups");
+
 //debugger;
 //            console.log(JSON.stringify(next.$$route, null, 4));
 //            $.getScript("bundles" + next.$$route.originalPath + "Bundle.js", function(sprm){
