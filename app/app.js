@@ -26,6 +26,9 @@ angular.module('app.uds', ['ngRoute', 'ngMessages', 'ngAnimate', 'jlareau.pnotif
             .when('/animations', {
                 template: '<animations></animations>'
             })
+            .when('/firstanim', {
+                template: '<animations></animations>'
+            })
             .when('/sourceTypes', {
                 template: '<source-types></source-types>'
             })
@@ -54,8 +57,16 @@ angular.module('app.uds', ['ngRoute', 'ngMessages', 'ngAnimate', 'jlareau.pnotif
             .otherwise({redirectTo: '/login'});
     }])
     .controller('AppController',['$scope', function($scope){
+
+        $scope.animations = [
+            {'label': 'First Anim', 'path':'firstanim'},
+            {'label': 'ngShow', 'path': 'ngshowanim'},
+            {'label': 'ngIf', 'path':'ngifanim'}
+        ];
+        $scope.navigation = $scope.animations;
         $scope.users = [];
         $scope.$on('$routeChangeStart', function(event, next, current) {
+//debugger;
 //            console.log(JSON.stringify(next.$$route, null, 4));
 //            $.getScript("bundles" + next.$$route.originalPath + "Bundle.js", function(sprm){
 //

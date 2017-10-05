@@ -5,7 +5,7 @@
     "use strict";
 
     angular.module('app.uds').component('animations', {
-        templateUrl: 'app/views/animationsView.html',
+        templateUrl: 'app/views/animations/animationsView.html',
         controller: 'AnimationsController'
 
     });

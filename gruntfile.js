@@ -17,6 +17,7 @@ module.exports = function(grunt) {
             udsviews:          {
                 src:        [
                     'app/views/*.html',
+                    'app/views/*/*.html',
                     'app/pages/common/*.html'
                 ],
                 dest:       'app/templates.js',
