@@ -23,10 +23,12 @@
 
 .view-animate-container {
     position:relative;
-    /*     height:100px!important;
-        background:whi
+/*
+        height:100px!important;
+        background:white;
         border:1px solid black;
-        height:40px;*/
+*/
+    height:900px;
     overflow:hidden;
 }
 
@@ -39,7 +41,7 @@
 
     display:block;
     width:100%;
-    border-left:1px solid black;
+    border-left:1px solid white;
 
     position:absolute;
     top:0;
@@ -50,7 +52,7 @@
 }
 
 .view-animate.ng-enter {
-    left:100%;
+    left:-100%;
 }
 .view-animate.ng-enter.ng-enter-active {
     left:0;
