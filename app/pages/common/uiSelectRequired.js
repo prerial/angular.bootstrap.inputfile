@@ -1,4 +1,6 @@
-/* add ui-select-required
+/*
+https://github.com/angular-ui/ui-select/issues/914
+add ui-select-required
 Thanks imaa! It is working well. The error msg also started showing up when
 I change the condition from:
     ng-show="abcForm.tasks.$error.required"
