@@ -1,3 +1,6 @@
+section.view-main {
+  padding:20px 40px
+}
 /*  Only used with Theme processes */
 html.md-THEME_NAME-theme, body.md-THEME_NAME-theme {
   color: '{{foreground-1}}';

@@ -34,7 +34,7 @@
                         title = $('#' + elem.attr('id') + '-error').find('span'+str).html();
                         template.addClass("pre-tooltip tooltip top").show().find('.tooltip-inner').html(title);
                         top = elem.offset().top - ($('.tooltip-container').height());
-                        left = (elem.offset().left + elem.width()) / 2;
+                        left = elem.offset().left + elem.width() / 2;
                         template.css('left', left).css('top', top).css('opacity', 1).css('display', 'block').stop(true,true);
                         elem.addClass('error');
                     }, function(){
