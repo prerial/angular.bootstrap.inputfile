@@ -5,6 +5,8 @@ module.exports = function(grunt) {
             'app/pages/animations/*.js',
             'app/pages/d3/*.js',
             'app/pages/d3/*/*.js',
+            'app/pages/*/*.js',
+            'app/pages/d3/book/*/*.js',
             'app/pages/landing/*.js'
         ],
         modules = 'app/app.js',
@@ -20,6 +22,8 @@ module.exports = function(grunt) {
                 src:        [
                     'app/views/*.html',
                     'app/views/*/*.html',
+                    'app/views/d3/book/*.html',
+                    'app/views/d3/book/*/*.html',
                     'app/pages/common/*.html'
                 ],
                 dest:       'app/templates.js',
