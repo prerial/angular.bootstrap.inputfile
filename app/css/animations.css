@@ -1,3 +1,37 @@
+.left {
+    background: grey;
+}
+
+.right {
+    background: black;
+}
+
+.main-wrapper {
+    height: 100vh;
+}
+
+.section {
+    height: 94%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.half {
+    background: #f9f9f9;
+    height: 50%;
+    width: 100%;
+    margin: 15px 0;
+}
+
+h4 {
+    color: white;
+}
+
+.dashed {
+    stroke-dasharray: 5,5;
+}
 .navbar-fixed-left {
     width: 140px;
     position: fixed;
@@ -38,11 +72,9 @@
 
 .view-animate.ng-enter, .view-animate.ng-leave {
     transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
-
     display:block;
     width:100%;
     border-left:1px solid white;
-
     position:absolute;
     top:0;
     left:0;

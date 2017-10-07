@@ -3,6 +3,8 @@ module.exports = function(grunt) {
             'app/pages/common/*.js',
             'app/pages/common/*/*.js',
             'app/pages/animations/*.js',
+            'app/pages/d3/*.js',
+            'app/pages/d3/*/*.js',
             'app/pages/landing/*.js'
         ],
         modules = 'app/app.js',
