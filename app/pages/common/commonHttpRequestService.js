@@ -14,8 +14,7 @@
                 $http.post(url, request)
                     .then(function (data) {
                         deferred.resolve(data);
-                    })
-                    .error(function (msg) {
+                    }, function functionError(msg) {
                         $rootScope.$broadcast('error:server', msg);
                         deferred.reject(msg);
                     });
@@ -33,10 +32,10 @@
                 return deferred.promise;
             }
             function postRequestData(data){
-                return httpPost(Urls[data.requestType], data);
+                return httpPost(Urls[data.requestType]||'none', data);
             }
             function getRequestData(data){
-                return httpGet(Urls[data.requestType], data);
+                return httpGet(Urls[data.requestType]||'none', data);
             }
             function getRequestDataByID(url){
                 return httpGet(url);

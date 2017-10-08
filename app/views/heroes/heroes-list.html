@@ -1,0 +1,26 @@
+<section class="view-main">
+        <nav>
+            <a href="#/dashboard">Dashboard</a>
+            <a href="#/heroes"  class="active">Heroes</a>
+        </nav>
+        <h2>My Heroes</h2>
+        <div>
+            <label>Hero&nbsp;name:</label> <input ng-model="heroName" style="margin-left:.4em"/>
+            <button ng-click="$ctrl.add(heroName); heroName=''">
+                Add
+            </button>
+        </div>
+        <ul class="heroes">
+            <li ng-repeat="hero in $ctrl.heroes" ng-class="{selected: hero === $ctrl.selectedHero}" ng-click="$ctrl.onSelect(hero)">
+                <span class="badge">{{hero.id}}</span><span class="text"> {{hero.name}}</span>
+                <button class="delete"  ng-click="$ctrl.delete(hero); $event.stopPropagation()">x</button>
+            </li>
+        </ul>
+        <div ng-if="$ctrl.selectedHero">
+            <h2>
+                {{$ctrl.selectedHero.name | uppercase}} is my hero
+            </h2>
+            <button ng-click="$ctrl.gotoDetail()">View Details</button>
+        </div>
+
+</section>
