@@ -1,0 +1,16 @@
+<section class="view-main">
+
+    <nav>
+        <a href="#/dashboard" class="active">Dashboard</a>
+        <a href="#/heroes">Heroes</a>
+    </nav>
+    <h3>Dashboard</h3>
+    <div class="grid grid-pad">
+        <div ng-repeat="hero in $ctrl.heroes"  url="['/detail', hero.id]" class="col-1-4">
+            <a ng-href="#/heroes/{{hero.id}}"><div class="module hero">
+                <h4>{{hero.name}}</h4>
+            </div></a>
+        </div>
+    </div>
+
+</section>

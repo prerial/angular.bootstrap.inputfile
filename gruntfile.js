@@ -40,6 +40,7 @@ module.exports = function(grunt) {
                     "app/css/main.css",
                     "app/css/custom.css",
                     "app/css/directives.css",
+                    "app/css/heroes.css",
                     "app/css/animations.css"
                 ],
                 dest: "app/main.css"

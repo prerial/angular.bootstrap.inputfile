@@ -5,6 +5,7 @@ angular.module('udsviews', []);
 angular.module('uds.directives', []);
 angular.module('app.uds', ['ngRoute', 'ngMessages', 'ngAnimate', 'nvd3', 'ui.grid', 'jlareau.pnotify', 'ui.bootstrap', 'angularFileUpload', 'udsviews', 'uds.directives'])
     .constant('Urls', {
+        'getHeroes':'/data/heroes.json',
         'saveEncryption':'/data/saveEncryptionPolicy.json',
         'getUiGridData':'/data/getUiGridData.json',
         'getAllEncryptions':'/data/getAllEncryptionPolicy.json'
@@ -23,6 +24,12 @@ angular.module('app.uds', ['ngRoute', 'ngMessages', 'ngAnimate', 'nvd3', 'ui.gri
         $routeProvider
             .when('/login', {
                 template: '<login-splash></login-splash>'
+            })
+            .when('/dashboard', {
+                template: '<dashboard></dashboard>'
+            })
+            .when('/heroes', {
+                template: '<heroes-list></heroes-list>'
             })
             .when('/d3index', {
                 template: '<d3index></d3index>'
@@ -86,6 +93,7 @@ angular.module('app.uds', ['ngRoute', 'ngMessages', 'ngAnimate', 'nvd3', 'ui.gri
             {'label': 'File Upload', 'path': 'login', 'navid': '0'},
             {'label': 'UI Grid', 'path': 'uigrid', 'navid': '0'},
             {'label': 'Animation', 'path':'firstanim', 'navid': '1'},
+            {'label': 'Heroes', 'path':'heroes', 'navid': '0'},
             {'label': 'D3 data Visual', 'path':'d3index', 'navid': '2'}
         ];
         $scope.animations = [
