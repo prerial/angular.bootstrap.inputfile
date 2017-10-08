@@ -32,7 +32,19 @@ module.exports = function(grunt) {
                 }
             }
         },
-
+        concat_css: {
+            options: {},
+            all: {
+                src: [
+                    "app/css/docs.css",
+                    "app/css/main.css",
+                    "app/css/custom.css",
+                    "app/css/directives.css",
+                    "app/css/animations.css"
+                ],
+                dest: "app/main.css"
+            }
+        },
         connect: {
             server: {
                 options: {
@@ -167,8 +179,8 @@ module.exports = function(grunt) {
     // Load the plugin that provides the "concat" task.
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-angular-templates');
-
+    grunt.loadNpmTasks('grunt-concat-css');
     // Default task(s).
-    grunt.registerTask('build', ['ngtemplates', 'concat'/*, 'compass'*/]);
-    grunt.registerTask('default', ['ngtemplates', 'concat'/*, 'compass'*/]);
+    grunt.registerTask('build', ['ngtemplates', 'concat', 'concat_css'/*, 'compass'*/]);
+    grunt.registerTask('default', ['ngtemplates', 'concat', 'concat_css'/*, 'compass'*/]);
 }
