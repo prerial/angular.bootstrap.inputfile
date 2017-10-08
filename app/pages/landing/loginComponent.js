@@ -9,8 +9,8 @@
         controller: 'LoginController'
 
     });
-    angular.module('app.uds').controller('LoginController', ['$scope', '$location', '$timeout', 'Alerts', 'notificationService', 'LoginService',
-          function($scope, $location, $timeout, alerts, notificationService, loginService) {
+    angular.module('app.uds').controller('LoginController', ['$scope', '$location', '$timeout', 'notificationService', 'LoginService',
+          function($scope, $location, $timeout, notificationService, loginService) {
 
               $scope.formSubmit = function() {
                   $scope.expired = false;
@@ -24,11 +24,6 @@
                       notificationService.error('Incorrect username/password!');
                   }
               };
-
-              $scope.alerts = [
- //                 { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
- //                 { type: 'success', msg: 'Well done! You successfully read this important alert message.' }
-              ];
 
               $scope.addAlert = function() {
                   $scope.alerts.push({msg: 'Another alert!'});

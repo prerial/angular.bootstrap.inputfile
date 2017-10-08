@@ -3,7 +3,7 @@
  */
 angular.module('udsviews', []);
 angular.module('uds.directives', []);
-angular.module('app.uds', ['ngRoute', 'ngMessages', 'ngAnimate', 'nvd3', 'ui.grid', 'jlareau.pnotify', 'ui.bootstrap', 'angularFileUpload', 'udsviews', 'uds.directives'])
+angular.module('app.uds', ['ngRoute', 'ngMessages', 'ngAnimate', 'nvd3', 'ui.grid', 'ui.grid.moveColumns', 'ui.grid.resizeColumns', 'ui.grid.selection', 'ui.grid.cellNav', 'jlareau.pnotify', 'ui.bootstrap', 'angularFileUpload', 'udsviews', 'uds.directives'])
     .constant('Urls', {
         'getHeroes':'/data/heroes.json',
         'saveEncryption':'/data/saveEncryptionPolicy.json',
